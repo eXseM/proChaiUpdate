@@ -1,0 +1,39 @@
+{
+  "name": "nuxt-prochais",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxt/types": "^2.14.12",
+    "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/pwa": "^3.0.2",
+    "bootstrap": "^4.5.3",
+    "bootstrap-vue": "^2.21.2",
+    "c-swipe": "^2.1.5",
+    "core-js": "^3.6.5",
+    "gsap": "^3.6.0",
+    "hooper": "^0.3.4",
+    "nuxt": "^2.14.6",
+    "scrollmagic": "^2.0.8",
+    "typed.js": "^2.0.11",
+    "vue": "^2.6.12",
+    "vue-axios": "^3.2.2",
+    "vue-radio-toggle-buttons": "^0.1.0",
+    "vue-scrollmagic": "^1.2.0",
+    "vue-smooth-scroll": "^1.0.13",
+    "vue-tilt.js": "^1.1.1",
+    "vue-typed-js": "^0.1.2",
+    "vuejs-scroll-fixed-header": "^1.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0",
+    "webpack": "^4.44.2"
+  }
+}
