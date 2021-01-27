@@ -6,8 +6,6 @@
           <slide class="slides"> <h2>1</h2> </slide>
           <slide class="slides"> <h2>2</h2> </slide>
           <slide class="slides"> <h2>3</h2> </slide>
-          <!-- <img :src="require(`../assets/${activeSlide}.jpg`)" alt="none"> -->
-          <!-- <slide v-for="(slide, idx) in slides" :key="idx" :index="idx"> {{slide}} </slide> -->
           <hooper-navigation slot="hooper-addons"></hooper-navigation>
         </hooper>
       </div>
@@ -34,17 +32,8 @@ export default {
     Slide,
     HooperNavigation,
   },
-  data(){
-      return{
-        //   slides:[`../assets/${'one'}.jpg`],
-        //   activeSlide:'one'
-      }
-  },
-  computed:{
-      check(){
-
-      }
-  }
+  data(){},
+  computed:{}
 };
 </script>
 
@@ -88,7 +77,7 @@ export default {
           font-size: 100px;
         }
     }
-      
+
     }
   }
   &__right {

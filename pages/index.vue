@@ -7,6 +7,7 @@
     <export />
     <start-work />
     <contacts />
+    <developers />
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import Attachments from '~/components/attachments.vue';
 import Export from '~/components/export.vue';
 import StartWork from '~/components/startWork.vue';
 import Contacts from '~/components/contacts.vue';
+import Developers from '~/components/developers.vue';
 
 export default {
   components: {
@@ -27,7 +29,8 @@ export default {
     Attachments,
     Export,
     StartWork,
-    Contacts
+    Contacts,
+    Developers
   },
 };
 </script>

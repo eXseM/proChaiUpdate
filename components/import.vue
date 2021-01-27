@@ -92,7 +92,7 @@ export default {
 .import {
   widows: 100%;
   height: 650px;
-  margin-top: 50px;
+  margin-top: 150px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;

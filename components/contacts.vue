@@ -11,7 +11,7 @@
     </div>
     <div class="cont__right">
       <div class="cont__right__social">
-        <a href="#"><img src="../assets/telegram.png" alt="" /></a>
+        <a href="https://telegram.im/@eXseM" target="_blank"><img src="../assets/telegram.png" alt="" /></a>
         <a href="#"><img src="../assets/whatsapp.png" alt="" /></a>
         <a href="tel: +79186275537">+7 (918) 627-55-37</a>
       </div>
@@ -42,7 +42,6 @@ export default {};
   font-size: 18px;
   font-weight: 500;
   font-family: Montserrat, sans-serif;
-
   &__left {
     width: 35%;
     display: flex;
@@ -81,12 +80,12 @@ export default {};
       align-content: center;
 
       img {
-        
+
         cursor: pointer;
       }
 
       a {
-       
+
         padding-left: 20px;
         text-decoration: none;
         cursor: pointer;
