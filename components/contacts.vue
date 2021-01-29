@@ -11,8 +11,8 @@
     </div>
     <div class="cont__right">
       <div class="cont__right__social">
-        <a href="https://telegram.im/@eXseM" target="_blank"><img src="../assets/telegram.png" alt="" /></a>
-        <a href="#"><img src="../assets/whatsapp.png" alt="" /></a>
+        <a href="https://telegram.im/@eXseM" target="_blank"><img src="../assets/tele2.png" alt="" /></a>
+        <a href="#"><img src="../assets/wapp1.png" alt=""/></a>
         <a href="tel: +79186275537">+7 (918) 627-55-37</a>
       </div>
       <div class="cont__right__btn">
@@ -42,6 +42,7 @@ export default {};
   font-size: 18px;
   font-weight: 500;
   font-family: Montserrat, sans-serif;
+  color: #000;
   &__left {
     width: 35%;
     display: flex;
@@ -80,7 +81,7 @@ export default {};
       align-content: center;
 
       img {
-
+        width: 52px;
         cursor: pointer;
       }
 
@@ -111,6 +112,64 @@ export default {};
         &:hover {
           color: #652bff;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  .cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    height: 300px;
+    width: 100%;
+
+    &__left{
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+
+      &__links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+
+        a{
+          padding-top: 10px;
+        }
+      }
+    }
+    &__right{
+      width: 100%;
+      padding-top: 10px;
+
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+
+      &__social{
+        display: flex;
+      }
+      &__btn{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        padding-bottom: 40px;
       }
     }
   }

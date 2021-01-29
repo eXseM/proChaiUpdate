@@ -1,7 +1,10 @@
 <template>
-  <div class="containerMain">
+  <div class="containerMain" >
     <banner />
     <info-block />
+    <div class="toTop" :style="arrow">
+      <a href="#top" v-smooth-scroll="{duration: 100, offset: 2}"><img src="../assets/arrowUp.png" alt=""></a>
+    </div>
     <attachments />
     <import />
     <export />
@@ -32,9 +35,44 @@ export default {
     Contacts,
     Developers
   },
+  data(){
+    return{
+      arrow:{
+        visibility: ''
+      }
+    }
+  },
+  mounted(){
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset < 800) {
+        this.arrow.visibility = 'hidden'
+      }else{
+        this.arrow.visibility = 'visible'
+      }
+    })
+  }
 };
 </script>
 
 
-<style>
+<style lang="scss">
+
+.toTop{
+
+  position: fixed;
+  bottom: 70px;
+  right: 150px;
+  animation: move 1s ease-in-out infinite;
+  z-index: 999;
+  img{
+    width: 44px;
+  }
+}
+
+@keyframes move {
+  50%{
+    bottom: 67px;
+  }
+}
+
 </style>

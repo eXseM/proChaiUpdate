@@ -6,26 +6,26 @@
     <div class="info__right">
       <div class="info__right__lb">
         <div class="lb__top">
-          <img src="../assets/like.png" alt="" />
+          <img src="../assets/heart.png" alt="" />
           <p>
-            Ваши гости всегда смогут 
-            отблагодарить ваших 
-            сотрудников в одно касание
+            Ваши гости всегда смогут
+            отблагодарить ваших
+            сотрудников
           </p>
         </div>
         <div class="lb__btm">
-          <img src="../assets/controls.png" alt="" />
-          <p>Вы видите отчётность по работе ваших официантов в режиме онлайн</p>
+          <img src="../assets/online.png" alt="" />
+          <p>Полная отчётность по работе официантов</p>
         </div>
       </div>
       <div class="info__right__rb">
         <div class="rb__top">
-          <img src="../assets/attachment.png" alt="" />
+          <img src="../assets/gift.png" alt="" />
           <p>Чаевые это подарок, а значит мы порадуем бухгалтера!</p>
         </div>
         <div class="rb__btm">
-          <img src="../assets/settings.png" alt="" />
-          <p>Мы совершенно бесплатно подключаем и настраиваем всю систему</p>
+          <img src="../assets/config.png" alt="" />
+          <p>Мы бесплатно подключаем и настраиваем всю систему</p>
         </div>
       </div>
     </div>
@@ -66,7 +66,7 @@ export default {};
   &__right {
     width: 70%;
     display: flex;
-    margin-top: -270px;
+    margin-top: -200px;
     align-items: center;
     align-content: center;
 
@@ -79,12 +79,14 @@ export default {};
       margin-left: 50px;
 
       .lb__top {
+        margin-top: 10px;
         display: flex;
         align-content: center;
         align-items: center;
         padding-bottom: 20px;
+        margin-bottom: 20px;
         p {
-          font-size: 16px;
+          font-size: 18px;
         }
         img {
           width: 42px;
@@ -98,7 +100,7 @@ export default {};
         align-content: center;
         padding-top: 20px;
         p {
-          font-size: 16px;
+          font-size: 18px;
         }
         img {
           width: 42px;
@@ -117,7 +119,8 @@ export default {};
         display: flex;
         align-content: center;
         align-items: center;
-       padding-bottom: 20px;
+        padding-bottom: 20px;
+        margin-top: -10px;
         p {
           font-size: 18px;
         }
@@ -132,6 +135,7 @@ export default {};
         padding-top: 30px;
         align-content: center;
         align-items: center;
+        margin-bottom: -20px;
         p {
           font-size: 18px;
         }

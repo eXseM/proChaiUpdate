@@ -21,7 +21,13 @@ html{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: #fcfcfc;
+  overflow-y: none;
+  
   /* background-image: url(../assets/MaskGroup.png); */
+}
+::-webkit-scrollbar {
+  display: none;
 }
 *{
   padding: 0;

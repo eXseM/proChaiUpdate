@@ -3,7 +3,6 @@
     <div class="banner">
       <div class="banner__leftSide">
         <h1 class="pt-5 mt-5">ПОВЫШЕНИЕ ЛОЯЛЬНОСТИ - ЧАЕВЫЕ КАРТОЙ</h1>
-        <!-- <li class="typing">Максимум лояльности</li> -->
         <div class="banner__content">
           <ul class="banner__content__list">
             <li>
@@ -16,17 +15,6 @@
               Подробная аналитика
             </li>
           </ul>
-        <!-- <vue-typed-js 
-        :strings="['Максимум лояльности', 'Довольный персонал', 'Подробная статистика']" 
-        :showCursor="false" 
-        :typeSpeed="100" 
-        :startDelay="1500" 
-        :backSpeed="100"
-        :loop="true">
-          <ul class="banner__content__list">
-              
-          </ul>
-        </vue-typed-js> -->
           <button class="banner__content__btn" href="#" v-tilt="{speed: 1500, max: 25, reverse: true, glare: true, transition: true}">Демо версия</button>
         </div>
       </div>
@@ -35,7 +23,7 @@
       </div>
     </div>
     <div class="arrowWrap">
-      <a href="#start" v-smooth-scroll="{duration: 2000, offset: 3}"><img src="../assets/Polygon 3.png" alt="" id="arrowDown"></a>
+      <a href="#start" v-smooth-scroll="{duration: 100, offset: 3}"><img src="../assets/Polygon 3.png" alt="" id="arrowDown"></a>
       
     </div>
     
@@ -47,10 +35,11 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+
 .container{
   background: #fbfbfc;
   width: 100%;
-  height: 830px;
+  height: 880px;
   display: flex;
   align-content: center;
   align-items: center;
@@ -61,6 +50,7 @@ export default {};
     top: 850px;
     animation: moveArrow 1s infinite;
   }
+
 }
 @keyframes moveArrow {
   50%{

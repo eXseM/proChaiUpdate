@@ -1,12 +1,21 @@
 <template>
   <div class="start">
     <div class="start__left">
+      <div class="start__left__sliderMob">
+        <client-only>
+          <swipe v-model="index" class="swiper">
+            <swipe-item style="background: springgreen"> <p>Item 1</p> </swipe-item>
+            <swipe-item style="background: #852BFF;"><p>Item 2</p></swipe-item>
+            <swipe-item style="background: indianred;"><p>Item 3</p></swipe-item>
+          </swipe>
+        </client-only>
+      </div>
       <div class="start__left__slider">
         <hooper :infiniteScroll="true" class="slider" :wheelControl='false'>
           <slide class="slides"> <h2>1</h2> </slide>
           <slide class="slides"> <h2>2</h2> </slide>
           <slide class="slides"> <h2>3</h2> </slide>
-          <hooper-navigation slot="hooper-addons"></hooper-navigation>
+          <hooper-navigation slot="hooper-addons" class="arrowsSwitch"></hooper-navigation>
         </hooper>
       </div>
     </div>
@@ -27,13 +36,16 @@ import { Hooper, Slide, Navigation as HooperNavigation } from "hooper";
 import 'hooper/dist/hooper.css';
 
 export default {
+  data(){
+    return{
+      index: 0
+    }
+  },
   components: {
     Hooper,
     Slide,
     HooperNavigation,
-  },
-  data(){},
-  computed:{}
+  }
 };
 </script>
 
@@ -49,11 +61,15 @@ export default {
   &__left {
     width: 40%;
     height: 500px;
-
+  &__sliderMob{
+    display: none;
+  }
     &__slider {
       width: 90%;
       height: 400px;
       margin: auto;
+      appearance: none;
+      outline: none;
 
       img {
         width: 100%;
@@ -78,6 +94,9 @@ export default {
         }
     }
 
+    .hooper-prev{
+      outline: none;
+    }
     }
   }
   &__right {
@@ -92,9 +111,46 @@ export default {
     }
 
     #Footprint{
-      margin-right: -180px;
+      margin-right: -120px;
       margin-top: -100px;
       transform: rotate(45deg);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .start{
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+
+    &__left{
+      margin-top: -250px;
+      &__sliderMob{
+        display: block;
+        width: 100%;
+        height: 400px;
+        .swiper{
+          height: 400px;
+          width: 80%;
+          margin: auto;
+        }
+      }
+      &__slider{
+        display: none;
+      }
+      width: 100%;
+    }
+    &__right{
+      width: 100%;
+      margin-top: 50px;
+      &__title{
+        font-size: 28px;
+        text-align: center;
+      }
+    }
+    #Footprint{
+      display: none;
     }
   }
 }

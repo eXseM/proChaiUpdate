@@ -5,14 +5,16 @@
         <h2>КАК ЗАЧИСЛИТЬ ЧАЕВЫЕ</h2>
       </div>
       <div class="import__left__btn">
-        <RadioToggleButtons
-          v-model="currentValue"
-          :values="values"
-          color="#852BFF"
-          textColor="#000"
-          selectedTextColor="#fff"
-          class="toggleBtn"
-        />
+        <client-only>
+          <RadioToggleButtons
+            v-model="currentValue"
+            :values="values"
+            color="#852BFF"
+            textColor="#000"
+            selectedTextColor="#fff"
+            class="toggleBtn"
+          />
+        </client-only>
       </div>
       <div class="import__left__text">
         <p class="text_value">{{ currentValue }}</p>
@@ -20,7 +22,7 @@
     </div>
     <div class="import__right">
       <div class="import__right__air">
-        <img src="../assets/air2.png" alt="" id="air" />
+        <img src="../assets/plane2.png" alt="" id="air" width="250" />
       </div>
       <div class="import__right__phone">
         <img src="../assets/cell.png" alt="" id="phone" />
@@ -44,19 +46,19 @@ export default {
         {
           label: "1",
           value:
-            "Гость может отсканировать QR с любой поверхности, будь то чек, бейджик, или экран планшета",
+            "Гость может отсканировать QR с любой поверхности, будь то чек, бейджик, или экран планшета.",
         },
         {
           label: "2",
-          value: "Push-сообщение, SMS, e-mail",
+          value: "Перейти по ссылке",
         },
         {
           label: "3",
-          value: "Через мобильное приложение",
+          value: "Ввести сумму чаевых и оплатить",
         },
       ],
       currentValue:
-        "Гость может отсканировать QR с любой поверхности, будь то чек, бейджик, или экран планшета",
+        "Гость может отсканировать QR с любой поверхности, будь то чек, бейджик, или экран планшета.",
     };
   },
   mounted() {
@@ -66,7 +68,7 @@ export default {
     startAnimations() {
       var tl = new TimelineMax({ onUpdate: updatePercentage });
 
-      tl.to("#air", 4, { left: "530px", top: "100px"}, 1);
+      tl.to("#air", 4, { left: "650px", top: "100px", transform: "rotate(45deg)"}, 0);
       tl.to('#phone', 2, {top: '100px'}, 1)
 
       const scene = this.$scrollmagic.scene({
@@ -90,7 +92,7 @@ export default {
 
 <style lang="scss" scoped>
 .import {
-  widows: 100%;
+  width: 100%;
   height: 650px;
   margin-top: 150px;
   display: flex;
@@ -159,7 +161,7 @@ export default {
   .import{
     width: 60%;
     margin-top: -200px;
-    
+
     &__left{
       margin-left: -50px;
       display: flex;

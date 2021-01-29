@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <div class="nav" :style="bgrnd" id="top">
     <div class="mob-nav">
       <div class="mob-nav__btn" @click="burger" :style="hideBtn">
         <img src="../assets/burg.png" alt=""  width="50x" height="40px"/>
@@ -7,14 +7,17 @@
       <div class="mob-nav__slider" :style="burgerMenu">
         <span @click="closeBurger">&#10008;</span>
         <div class="mob-nav__slider__content">
-          <a href="tel: +79186275537" class="navbar__phone__num">
+          <a href="tel: +79186275537">
             8 (918) 627-55-37
           </a>
           <a href="#"> Войти </a>
         </div>
       </div>
     </div>
-    <div class="nav__logo-wrapper">
+    <!-- <div class="burger">
+      <img src="../assets/burg.png" width="44" alt="" @click="show = !show">
+    </div> -->
+    <div class="nav__logo-wrapper" :style="hides" v-show="show">
       <img
         src="../assets/logo232.png"
         alt=""
@@ -28,8 +31,8 @@
         }"
       />
     </div>
-    <div class="nav__links-wrapper">
-      <a href="#">8 (918) 627-55-37</a>
+    <div class="nav__links-wrapper" :style="sticky" v-show="show">
+      <a href="#"  class="nav__phone">8 (918) 627-55-37</a>
       <button
         class="nav__btn"
         v-tilt="{
@@ -43,7 +46,7 @@
         Войти
       </button>
     </div>
-    
+
   </div>
 </template>
 
@@ -60,8 +63,15 @@ export default {
       sticky: {
         position: "",
         display: "",
-        visibility: "",
+        visibility: ""
       },
+      bgrnd:{
+        background: ''
+      },
+      hides:{
+        visibility: ""
+      },
+      show: true
     };
   },
   methods: {
@@ -77,14 +87,35 @@ export default {
   mounted() {
     window.addEventListener("scroll", () => {
       // console.log(window.pageYOffset);
-      if (window.pageYOffset == 0) {
-        this.sticky.visibility = "visible";
-      } else if (window.pageYOffset > 0 && window.pageYOffset < 500) {
-        this.sticky.visibility = "collapse";
-      } else {
-        this.sticky.position = "sticky";
-        this.sticky.visibility = "visible";
-      }
+      // if(window.pageYOffset === 0){
+      //   this.bgrnd.background = '#fcfcfc'
+      //   this.hides.visibility = 'visible'
+      // }else if(window.pageYOffset > 0){
+      //   this.bgrnd.background = 'none'
+      //   this.hides.visibility = 'collapse'
+      // }
+
+      // if (window.pageYOffset === 0) {
+      //   this.sticky.visibility = "visible";
+      // } else if (window.pageYOffset > 0 && window.pageYOffset < 900) {
+      //   this.sticky.visibility = "collapse";
+      // } else {
+      //   this.sticky.position = "sticky";
+      //   this.sticky.visibility = "visible";
+      // }
+
+      // if (window.pageYOffset === 0) {
+      //   this.show = true;
+      //   this.bgrnd.background = '#fcfcfc'
+      // } else if (window.pageYOffset > 0) {
+      //   this.bgrnd.background = 'none'
+      //     // if (this.show === true){
+      //     //     this.bgrnd.background = '#fcfcfc'
+      //     // }
+      // }else{
+      //   // this.show = true;
+      //   this.bgrnd.background = '#fcfcfc'
+      // }
     });
   },
 };
@@ -94,17 +125,36 @@ export default {
 .mob-nav {
   display: none;
 }
+// .burger{
+//     width: 0;
+//     height: 0;
+//     position: sticky;
+//     left: 70px;
+//     top: 30px;
+//     z-index: 333;
+//     background: none;
+//   }
 .nav {
   width: 100%;
   display: flex;
   flex-direction: row;
   padding-top: 10px;
   padding-bottom: 10px;
-  background: #fbfbfc;
+  background: rgba(251, 251, 252, .8);
   z-index: 33;
+  // visibility: hidden;
   top: 0;
+  height: 82px;
   transition: 1s, ease-in-out;
   font-family: Roboto, sans-serif;
+
+
+  &__phone{
+
+    &:hover{
+      color: #852bff;
+    }
+  }
 
   &__logo-wrapper {
     width: 50%;
@@ -113,6 +163,10 @@ export default {
     justify-content: center;
     align-content: center;
     align-items: center;
+
+    img{
+      width: 170px;
+    }
   }
   &__links-wrapper {
     width: 50%;
@@ -131,8 +185,6 @@ export default {
       letter-spacing: 1px;
     }
   }
-  &__logo {
-  }
 
   &__btn {
     //Neon
@@ -147,7 +199,6 @@ export default {
     appearance: none;
     box-sizing: border-box;
     position: relative;
-    transition: 0.5s;
     overflow: hidden;
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -168,7 +219,7 @@ export default {
       height: 10px;
       border-top: 2px solid #852bff;
       border-left: 2px solid #852bff;
-      transition: 0.5s;
+      transition: 0.2s;
     }
     &:hover:before {
       width: 100%;
@@ -183,7 +234,7 @@ export default {
       height: 10px;
       border-bottom: 2px solid #852bff;
       border-right: 2px solid #852bff;
-      transition: 0.5s;
+      transition: 0.2s;
     }
     &:hover:after {
       width: 100%;
@@ -245,14 +296,15 @@ export default {
         align-items: center;
         position: sticky;
 
-        
+
         a {
           font-size: 24px;
           color: #fff;
           text-decoration: none;
         }
       }
-    } 
+    }
   }
 }
+
 </style>
